@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block name %}Locatie-Product Overzicht{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+            <table  class="table table-hover" id="product-locatie">
+                <thead>
+                <tr>
+                    <th>Locatie</th>
+                    <th>Product</th>
+                    <th>Aantal</th>
+                    <th>Fabriekant</th>
+                    <th>Inkoop prijs</th>
+                    <th>Verkoop prijs</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Almere</td>
+                        <td>Hamer</td>
+                        <td>55</td>
+                        <td>Hormbach</td>
+                        <td>€ 2.99,-</td>
+                        <td>€ 3.99,-</td>
+                    </tr>
+                    <tr>
+                        <td>Almere</td>
+                        <td>Zaag</td>
+                        <td>10</td>
+                        <td>Hormbach</td>
+                        <td>€ 0.99,-</td>
+                        <td>€ 1.99,-</td>
+                    </tr>
+                    <tr>
+                        <td>Almere</td>
+                        <td>Boor</td>
+                        <td>15</td>
+                        <td>Hormbach</td>
+                        <td>€ 10.99,-</td>
+                        <td>€ 15.99,-</td>
+                    </tr>
+                    <tr>
+                        <td>Rotterdam</td>
+                        <td>Boor</td>
+                        <td>3</td>
+                        <td>Hormbach</td>
+                        <td>€ 10.99,-</td>
+                        <td>€ 15.99,-</td>
+                    </tr>
+                    <tr>
+                        <td>Rotterdam</td>
+                        <td>Boor</td>
+                        <td>20</td>
+                        <td>Praxis</td>
+                        <td>€ 9.99,-</td>
+                        <td>€ 15.99,-</td>
+                    </tr>
+                    <tr>
+                        <td>Eindhoven</td>
+                        <td>Hamer</td>
+                        <td>20</td>
+                        <td>Praxis</td>
+                        <td>€ 5.99,-</td>
+                        <td>€ 7.50,-</td>
+                    </tr>
+                    <tr>
+                        <td>Eindhoven</td>
+                        <td>Kettingzaag</td>
+                        <td>2</td>
+                        <td>Praxis</td>
+                        <td>€ 20.99,-</td>
+                        <td>€ 45.99,-</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+{% endblock %}
+{% block extrajava %}
+    <script src="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></script>
+    <script>
+        $(document).ready(function(){
+            $('#product-locatie').DataTable({
+                "orderCellsTop": false
+            });
+        });
+    </script>
+{% endblock %}

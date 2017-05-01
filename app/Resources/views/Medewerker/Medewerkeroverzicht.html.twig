@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block name %}Overzicht medewerkers{% endblock %}
+{% block body %}
+<div class="jumbotron">
+    <table  class="table table-hover" id="medewerker">
+        <thead>
+        <tr>
+            <th>Voorletters</th>
+            <th>voorvoegsels</th>
+            <th>Achternaam</th>
+            <th>Gebruikersnaam</th>
+            <th>Beheer</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <script>
+            function myConfirm() {
+                var r = confirm("Are you sure to delete medewerker?");
+
+                if (r == false) {
+                    event.preventDefault();
+                }
+            }
+        </script>
+        {% if medewerker is defined %}
+            {% for items in medewerker %}
+                <tr>
+                    <td>{{ items.voorletters }}</td>
+                    <td>{{ items.voorvoegsels }}</td>
+                    <td>{{ items.achternaam }}</td>
+                    <td>{{ items.gebruikersnaam }}</td>
+                    <td>
+                        <a href="/wijzigmedewerkerpage{{ items.id }}"><i class="fa fa-pencil alert-info" style="font-size:20px;margin-right:5px" aria-hidden="true"></i></a>
+                        <a href="/delete{{ items.id }}"><i class="fa fa-times alert-danger" style="font-size:20px;margin-right:5px" aria-hidden="true" onclick="myConfirm()"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block extrajava %}
+    <script src="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></script>
+    <script>
+        $(document).ready(function(){
+            $('#medewerker').DataTable({
+                "orderCellsTop": false
+            });
+        });
+    </script>
+{% endblock %}

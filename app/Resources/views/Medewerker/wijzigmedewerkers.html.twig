@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block name %}Home{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <form action="/wijzigmedewerkers{{ medewerker.id }}" method="post">
+            <div class="form-group">
+
+                <input type="text" id="voorletters" name="voorletters" placeholder="voorletters" class="form-control" required value="{{ medewerker.voorletters }}"><br>
+                <input type="text" id="voorvoegsels" name="voorvoegsels" placeholder="voorvoegsels" class="form-control" value="{{ medewerker.voorvoegsels }}"><br>
+                <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control" required value="{{ medewerker.achternaam }}"><br>
+                <input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="gebruikersnaam" class="form-control" required value="{{ medewerker.gebruikersnaam }}"><br>
+                <input type="password" id="wachtwoord" name="wachtwoord" placeholder="wachtwoord" class="form-control" required value="{{ medewerker.wachtwoord }}"><br>
+                <input type="submit" value="Verzenden" class="btn btn-secondary">
+            </div>
+        </form>
+    </div>
+{% endblock %}

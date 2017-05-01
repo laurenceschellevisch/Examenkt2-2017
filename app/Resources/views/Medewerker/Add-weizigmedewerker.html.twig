@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block name %}Home{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <form action="/MedewerkerAdded" method="post">
+            <div class="form-group">
+                <input type="text" id="voorletters" name="voorletters" placeholder="voorletters" class="form-control" required><br>
+                <input type="text" id="voorvoegsels" name="voorvoegsels" placeholder="voorvoegsels" class="form-control"><br>
+                <input type="text" id="achternaam" name="achternaam" placeholder="achternaam" class="form-control" required><br>
+                <input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="gebruikersnaam" class="form-control" required><br>
+                <input type="password" id="wachtwoord" name="wachtwoord" placeholder="wachtwoord" class="form-control" required><br>
+                <input type="submit" value="Verzenden" class="btn btn-secondary">
+            </div>
+        </form>
+    </div>
+{% endblock %}

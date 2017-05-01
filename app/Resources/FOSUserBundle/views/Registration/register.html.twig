@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <a href="/login">Log in</a>
+    </div>
+
+
+    <div>
+
+        <form name="fos_user_registration_form" method="post" action="/register/" class="fos_user_registration_register">
+            <div id="fos_user_registration_form"><div><label for="fos_user_registration_form_email" class="required">Email</label><input type="email" id="fos_user_registration_form_email" name="fos_user_registration_form[email]" required="required"></div><div><label for="fos_user_registration_form_username" class="required">Username</label><input type="text" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" maxlength="180" pattern=".{2,}"></div><div><label for="fos_user_registration_form_plainPassword_first" class="required">Password</label><input type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" required="required"></div><div><label for="fos_user_registration_form_plainPassword_second" class="required">Repeat password</label><input type="password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required="required" aria-autocomplete="list"></div><input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" value="tgE6PluMmQWL_vQiGgNa7noq1oupOksoDRMMQ4EQENs"></div>
+            <div>
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+{% endblock %}

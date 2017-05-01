@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block name %}Contact{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <form class="form-group">
+            <input type="text" placeholder="Name" class="form-control"><br>
+            <input type="text" placeholder="E-Mail" class="form-control"><br>
+            <textarea type="text" placeholder="Beschrijf uw vraag/probleem" style="height:200px;" class="form-control"></textarea><br>
+            <input type="submit" class="btn btn-secondary">
+        </form>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1lv-BHVPyC3UJcE1ADrVflGzCcq0" width="750" height="500"></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}
